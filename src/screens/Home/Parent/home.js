@@ -85,7 +85,7 @@ export default function CourseBuyForParent({ navigation }) {
         >
         <View style={styles.container1}>
             <View style={styles.header}>
-                <Text style={{ color: '#ffffff', fontSize: 20, marginLeft: 20, textAlign: 'left', fontWeight: 'bold' }}>Khóa học</Text>
+                <Text style={{ color: '#ffffff', fontSize: 20, marginLeft: 20, textAlign: 'left', fontWeight: 'bold' }}>Đang học</Text>
             </View>
 
             <View style={styles.search}>

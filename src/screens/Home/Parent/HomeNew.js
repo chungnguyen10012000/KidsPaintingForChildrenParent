@@ -88,7 +88,7 @@ export default function HomeParentScreen({ route, navigation }) {
         >
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={{ color: '#ffffff', fontSize: 20, marginLeft: 20, textAlign: 'left', fontWeight: 'bold' }}>Trang chủ</Text>
+                <Text style={{ color: '#ffffff', fontSize: 20, marginLeft: 20, textAlign: 'left', fontWeight: 'bold' }}>Khóa học</Text>
             </View>
 
             <View style={styles.search}>
@@ -108,12 +108,12 @@ export default function HomeParentScreen({ route, navigation }) {
                     </View>
                 </TouchableOpacity>
                   <View style={{flex: 0.4}}>
-                      <Text>Khóa học</Text>
+                      <Text>Đang học</Text>
                   </View>
                 </View>
                 <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', }}>
                     <TouchableOpacity onPress={() => navigation.navigate('ScheduleScreen')} style={{alignItems: 'center', justifyContent: 'center',borderRadius: 100, borderWidth: 0.2, backgroundColor: '#fdbf00', height: '50%', width: '50%', flex: 0.6}}>
-                    <View style={{alignItems: 'center', justifyContent: 'center',borderRadius: 100, borderWidth: 0.2, backgroundColor: '#fdbf00', height: '50%', width: '100%', flex: 1}}>
+                    <View style={{alignItems: 'center', justifyContent: 'center',borderRadius: 100, borderWidth: 0.2, backgroundColor: '#2a58fc', height: '50%', width: '100%', flex: 1}}>
                     <FontAwesome5 name={'receipt'} size={30} color='#ffffff' />
                   </View>
                     </TouchableOpacity>
@@ -123,12 +123,12 @@ export default function HomeParentScreen({ route, navigation }) {
                 </View>
                 <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', }}>
                 <TouchableOpacity onPress={() => navigation.navigate('')} style={{alignItems: 'center', justifyContent: 'center',borderRadius: 100, borderWidth: 0.2, backgroundColor: '#fdbf00', height: '50%', width: '50%', flex: 0.6}}>
-                    <View style={{alignItems: 'center', justifyContent: 'center',borderRadius: 100, borderWidth: 0.2, backgroundColor: '#2a58fc', height: '50%', width: '100%', flex: 1}}>
-                    <FontAwesome5 name={'clock'} size={30} color='#ffffff' />
+                    <View style={{alignItems: 'center', justifyContent: 'center',borderRadius: 100, borderWidth: 0.2, backgroundColor: '#fdbf00', height: '50%', width: '100%', flex: 1}}>
+                    <FontAwesome5 name={'shopping-cart'} size={30} color='#ffffff' />
                   </View>
                     </TouchableOpacity>
                   <View style={{flex: 0.4}}>
-                      <Text>Lịch sử mua</Text>
+                      <Text>Giỏ hàng</Text>
                   </View>
                 </View>
             </View>
@@ -136,7 +136,7 @@ export default function HomeParentScreen({ route, navigation }) {
             <View style={styles.listCourse}>
                 <View style={{flex: 1}}>
                     <ScrollView>
-                        <Text style={{ color: '#000000', marginLeft: 20, fontSize: 15 , marginTop: 20}}>Tất cả khóa học </Text>
+                        <Text style={{ color: '#000000', marginLeft: 20, fontSize: 15 , marginTop: 20}}>Khóa học mới </Text>
                         {
                             courseList.map((element, index) => {
                                 return (

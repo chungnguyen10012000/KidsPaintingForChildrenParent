@@ -78,6 +78,8 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
+    entryFile: "index.js",
+    bundleAssetName: "app.bundle",
     enableHermes: false,  // clean and rebuild if changing
 ]
 
@@ -192,8 +194,6 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
-
-    implementation project(':react-native-google-pay')
 
     compile project(':react-native-vector-icons')
     

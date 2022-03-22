@@ -50,7 +50,8 @@ export default function LoginScreen({ navigation }) {
         //         console.log('AsyncStorage error: ' + error.message);
         //       }
         // })
-        console.log(email, password)
+        //console.log(email, password)
+        navigation.navigate('TabNavigation', { isChild: false })
         if (email.value === 'nvchung00@gmail.com' && password.value === '123') {
             Popup.show({
                 type: 'Success',

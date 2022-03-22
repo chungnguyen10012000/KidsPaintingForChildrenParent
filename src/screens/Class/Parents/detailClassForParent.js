@@ -2,7 +2,6 @@ import React from 'react';
 import { TouchableOpacity, Image, Text, View, StyleSheet, Button } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { Course } from '../../../models/course';
-import { GooglePay } from 'react-native-google-pay';
 
 const fakeCourseList = [
     {
@@ -31,53 +30,6 @@ const fakeCourseList = [
     return courses
   }
 
-function handlerPayment(price) {
-  // Set the environment before the payment request
-  GooglePay.setEnvironment(GooglePay.ENVIRONMENT_TEST);
-
-  const allowedCardNetworks = ['VISA', 'MASTERCARD'];
-  const allowedCardAuthMethods = ['PAN_ONLY', 'CRYPTOGRAM_3DS'];
-
-  const requestData = {
-    cardPaymentMethod: {
-      tokenizationSpecification: {
-        type: 'PAYMENT_GATEWAY',
-        // stripe (see Example):
-        gateway: 'stripe',
-        gatewayMerchantId: '',
-        stripe: {
-          publishableKey: 'pk_test_TYooMQauvdEDq54NiTphI7jx',
-          version: '2018-11-08',
-        },
-        // other:
-        gateway: 'example',
-        gatewayMerchantId: 'exampleGatewayMerchantId',
-      },
-      allowedCardNetworks,
-      allowedCardAuthMethods,
-    },
-    transaction: {
-      totalPrice: price,
-      totalPriceStatus: 'FINAL',
-      currencyCode: 'USD',
-    },
-    merchantName: 'Example Merchant',
-  };
-  
-  // Check if Google Pay is available
-  GooglePay.isReadyToPay(allowedCardNetworks, allowedCardAuthMethods)
-    .then((ready) => {
-      if (ready) {
-        // Request payment token
-        GooglePay.requestPayment(requestData)
-          .then((token) => {
-            // Send a token to your payment gateway
-          })
-          .catch((error) => console.log(error.code, error.message));
-      }
-    })
-}
-
 export default function ClassDetailScreenForParent({ route, navigation }) {
     const courseList = contexParse(fakeCourseList)
     const { course_id } = route.params
@@ -93,7 +45,7 @@ export default function ClassDetailScreenForParent({ route, navigation }) {
             <Text style={{textAlign: 'center', alignContent: 'center', alignItems: 'center', marginBottom: 20}}>Số buổi: {courseList[course_id].CourseAmount} </Text>
         </View>
         <View style={styles.btn}>
-                <TouchableOpacity onPress={() => handlerPayment(courseList[course_id].CoursePrice)} style={{ flex: 1 }} >
+                <TouchableOpacity style={{ flex: 1 }} >
                     <View style={styles.loginButton}>
                         <View style={{ flex: 1, justifyContent: 'center' }}>
                             <Text style={{ fontSize: 18, textAlign: 'left', marginLeft: 20, color: '#ffffff' }}>Thanh toán</Text>

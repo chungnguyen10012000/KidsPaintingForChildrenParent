@@ -14,6 +14,9 @@ import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable; // <--- Add this line if not already existing
+
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -38,6 +41,11 @@ public class MainApplication extends Application implements ReactApplication {
         @Override
         protected String getJSMainModuleName() {
           return "index";
+        }
+        
+        @Override
+        protected @Nullable String getBundleAssetName() {
+          return "app.bundle";
         }
       };
 
