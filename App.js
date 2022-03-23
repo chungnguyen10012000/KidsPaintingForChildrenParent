@@ -14,7 +14,6 @@ import { LogBox } from 'react-native';
 import LoginScreen from './src/screens/LoginScreen/LoginNew';
 import SigupScreen from './src/screens/SigUpScreen/SigUpNew'
 import TabNavigation from './src/screens/Tab-Bar/tabNavigation';
-import StartScreen from './src/screens/Start/start';
 import StartScreen_0 from './src/screens/Start/start_0'
 import StartScreen_1 from './src/screens/Start/start_1';
 import StartScreen_2 from './src/screens/Start/start_2';
@@ -40,7 +39,6 @@ const App = () => {
           <Stack.Screen name="StartScreen_0" component={StartScreen_0} />
           <Stack.Screen name="StartScreen_1" component={StartScreen_1} />
           <Stack.Screen name="StartScreen_2" component={StartScreen_2} />
-          <Stack.Screen name="StartScreen" component={StartScreen} />
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="SigupScreen" component={SigupScreen} /> 
           <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} /> 

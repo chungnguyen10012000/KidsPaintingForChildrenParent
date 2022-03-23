@@ -4,10 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-import HomeScreen from '../Home/HomeNew';
 import MessageScreen from '../Message/message';
 import UtilityScreen from '../Utilities/utilities';
-import MyLessonScreen from '../Lessons/lesson';
 import SendMessageScreen from '../Message/sendMessage';
 import ViewInfoScreen from '../Utilities/viewInfo';
 import ChangeInfoScreen from '../Utilities/changeInfo';
@@ -17,37 +15,37 @@ import GameScreen from '../Games/game';
 import EndGameScreen from '../Games/endGame';
 import MixerColorScreen from '../MixColor/mixColor';
 import AnswerScreen from '../MixColor/resultColor';
-import ExerciseScreen from '../Exercises/exercise'
-import ContestScreenForChild from '../Contest/contest'
-import HomeParentScreen from '../Home/Parent/HomeNew';
-import DetailContestScreen from '../Contest/Parents/detailContest';
-import TrackingContestKid from '../Contest/Parents/trackingKid';
-import HomeParentScreen2 from '../Home/Parent/home';
-import ClassScreenKid from '../Class/classFroKids';
-import ScheduleScreen from '../Schedule/Schedule';
-import CourseHasBuyScreen from '../Home/home';
-import ContestParentScreen from '../Contest/Parents/contest';
-import ClassDetailScreenForParent from '../Class/Parents/detailClassForParent';
-import ClassDetailScreenForKid from '../Class/detailClass';
-import ContestHasSignForKid from '../Contest/ContestHasSign';
-import ContestDetailForKid from '../Contest/ContestDetailForKid';
-import KidsJoinContest from '../Contest/KidsJoinContest';
-import ListContestHasScore from '../Contest/ListContestHasScore';
-import ScoreContestAll from '../Contest/ScoreContestAll';
-import GBAForKids from '../GBA/GBAForKids';
-import GBAContestForKids from '../GBA/GBAContestKids';
-import CourseBuyForParent from '../Home/Parent/home';
-import StudyingCourse from '../Courses/Studying';
-import StudyedScreen from '../Courses/Studyed';
-import ViewResultStudyed from '../Courses/ViewResultStudyed';
-import TrackingCourseKid from '../Class/Parents/trackingKid';
-import TrackingExam from '../Class/Parents/trackingExam';
-import TrackingAll from '../Class/Parents/trackingAll';
-import ResultContest from '../Contest/Parents/ResultContest';
-import ContestHasSign from '../Contest/Parents/ContestHasSig';
-import VideoCall from '../CallVideo/CallVideo'
-import HomePageForParent from '../HomePage/HomePage';
-import TabBarParentViewChild from '../HomePage/Navigation';
+import AddAccountKid from '../Parent/AddAccountKid/AddAccountKid';
+import HomeForParent from '../Parent/Home/HomeForParent';
+import TabBarForTracking from '../Parent/Tracking/TabBarForTracking'
+import ShoppingCart from '../Parent/Cart/ShoppingCart'
+import HistoryPayment from '../Parent/History/HistoryPayment';
+import ShoppingCourse from '../Parent/Shopping/Course/ShoppingCourse';
+import ShoppingCourseDetail from '../Parent/Shopping/Course/ShoppingCourseDetail';
+import ListContest from '../Parent/Shopping/Contest/ListContest';
+import JoinContest from '../Parent/Shopping/Contest/JoinContest';
+import ContestJoined from '../Parent/Shopping/Contest/ContestJoined';
+import HomeKids from '../Kids/Home/HomeKids';
+import CourseStudied from '../Kids/Course/CourseStudied';
+import Courses from '../Kids/Course/Course';
+import RecommendCourses from '../Kids/Course/RecommendCourses';
+import CourseStudying from '../Kids/Course/CourseStudying';
+import TrackingProgress from '../Parent/Tracking/Course/TrackingProgress';
+import TrackingResult from '../Parent/Tracking/Course/TrackingResult';
+import TrackingDetailResult from '../Parent/Tracking/Course/TrackingDetailResult';
+import TrackingExam from '../Parent/Tracking/Course/TrackingExam';
+import TrackingDetailExam from '../Parent/Tracking/Course/TrackingDetailExam';
+import Lessons from '../Kids/Course/Lesson';
+import Exicises from '../Kids/Course/Exicise';
+import VideoCalls from '../Kids/Course/VideoCall';
+import Contests from '../Kids/Contest/Contest';
+import ContestDetail from '../Kids/Contest/ContestDetail';
+import ContestJoining from '../Kids/Contest/ContestJoining';
+import Submits from '../Kids/Contest/Submit';
+import TrackingContestStudied from '../Parent/Tracking/Contest/TrackingContestStudied';
+import TrackingResultContest from '../Parent/Tracking/Contest/TrackingResultContest';
+import TrackingResultDetailContest from '../Parent/Tracking/Contest/TrackingResultDetailContest';
+import Schedules from '../Parent/Tracking/Course/Schedule';
 
 
 const Tab = createBottomTabNavigator();
@@ -111,13 +109,13 @@ export default function TabNavigation({ route, navigation }) {
               return (
                 <HomeStack.Navigator screenOptions={{ headerShown: false}}>
                   <HomeStack.Screen
-                    name="Home"
-                    component={HomeScreen}
+                    name="HomeKids"
+                    component={HomeKids}
                     initialParams={{ isChild: isChild }}
                   />
                   <HomeStack.Screen
-                    name="MyClass"
-                    component={ClassScreenKid}
+                    name="CourseStudied"
+                    component={CourseStudied}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -130,159 +128,6 @@ export default function TabNavigation({ route, navigation }) {
                       title: 'Lớp học của bé'
                     }}
                   />
-                  <HomeStack.Screen
-                  name="ScheduleScreen"
-                  component={ScheduleScreen}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
-                  }}
-                />
-                <HomeStack.Screen
-                  name="VideoCall"
-                  component={VideoCall}
-                  
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
-                    tabBarVisible: false,
-                    tabBarShowLabel: false
-                  }}
-                />
-                <HomeStack.Screen
-                  name="ViewResultStudyed"
-                  component={ViewResultStudyed}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
-                  }}
-                />
-                <HomeStack.Screen
-                  name="StudyingCourse"
-                  component={StudyingCourse}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
-                  }}
-                />
-                <HomeStack.Screen
-                  name="StudyedScreen"
-                  component={StudyedScreen}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
-                  }}
-                />
-                <HomeStack.Screen
-                  name="GBAForKids"
-                  component={GBAForKids}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Kết quả học tập',
-                  }}
-                />
-                  <HomeStack.Screen
-                    name="CourseBuy"
-                    component={CourseHasBuyScreen}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Khóa học'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="MyLesson"
-                    component={MyLessonScreen}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Buổi học của bé'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="ClassDetailScreenForKid"
-                    component={ClassDetailScreenForKid}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Buổi học của bé'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="Exercise"
-                    component={ExerciseScreen}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Bài tập'
-                    }}
-                  />
 
                 </HomeStack.Navigator>
               )
@@ -293,8 +138,8 @@ export default function TabNavigation({ route, navigation }) {
                   screenOptions={{ headerShown: false }}
                 >
                   <HomeStack.Screen
-                    name="Home"
-                    component={HomePageForParent}
+                    name="HomeForParent"
+                    component={HomeForParent}
                     initialParams={{ isPayment: false }}
                     options={{
                       headerStyle: {
@@ -310,7 +155,7 @@ export default function TabNavigation({ route, navigation }) {
                   />
                   <HomeStack.Screen
                   name="ScheduleScreen"
-                  component={ScheduleScreen}
+                  component={Schedules}
                   options={{
                     headerStyle: {
                       backgroundColor: '#FFEDDA',
@@ -325,8 +170,8 @@ export default function TabNavigation({ route, navigation }) {
                 />
                 <HomeStack.Screen
                   independent={true}
-                  name="TabBarParentViewChild"
-                  component={TabBarParentViewChild}
+                  name="TabBarForTracking"
+                  component={TabBarForTracking}
                   options={{
                     headerStyle: {
                       backgroundColor: '#FFEDDA',
@@ -342,69 +187,10 @@ export default function TabNavigation({ route, navigation }) {
                     title: 'Thời khóa biểu',
                   }}
                 />
-                  <HomeStack.Screen
-                    name="Home1"
-                    component={HomeParentScreen2}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="TrackingAll"
-                    component={TrackingAll}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="TrackingExam"
-                    component={TrackingExam}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="TrackingCourseKid"
-                    component={TrackingCourseKid}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                  name="StudyedScreen"
-                  component={StudyedScreen}
+                <HomeStack.Screen
+                  independent={true}
+                  name="AddAccountKid"
+                  component={AddAccountKid}
                   options={{
                     headerStyle: {
                       backgroundColor: '#FFEDDA',
@@ -414,84 +200,50 @@ export default function TabNavigation({ route, navigation }) {
                       color: '#3DB2FF',
                       // use your preferred color code
                     },
+                    tabBarStyle: {
+                      display: 'none',
+                    },
                     title: 'Thời khóa biểu',
                   }}
                 />
-                  <HomeStack.Screen
-                    name="StudyingCourse"
-                    component={StudyingCourse}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="CourseBuyForParent"
-                    component={CourseBuyForParent}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="ClassDetailScreen"
-                    component={ClassDetailScreenForParent}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Chi tiết khóa học'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="MyLesson"
-                    component={MyLessonScreen}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Buổi học của bé'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="Exercise"
-                    component={ExerciseScreen}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Bài tập'
-                    }}
-                  />
+                                <HomeStack.Screen
+                  independent={true}
+                  name="HistoryPayment"
+                  component={HistoryPayment}
+                  options={{
+                    headerStyle: {
+                      backgroundColor: '#FFEDDA',
+                      // use your preferred color code
+                    },
+                    headerTitleStyle: {
+                      color: '#3DB2FF',
+                      // use your preferred color code
+                    },
+                    tabBarStyle: {
+                      display: 'none',
+                    },
+                    title: 'Thời khóa biểu',
+                  }}
+                />
+                <HomeStack.Screen
+                  independent={true}
+                  name="ShoppingCart"
+                  component={ShoppingCart}
+                  options={{
+                    headerStyle: {
+                      backgroundColor: '#FFEDDA',
+                      // use your preferred color code
+                    },
+                    headerTitleStyle: {
+                      color: '#3DB2FF',
+                      // use your preferred color code
+                    },
+                    tabBarStyle: {
+                      display: 'none',
+                    },
+                    title: 'Thời khóa biểu',
+                  }}
+                />
                 </HomeStack.Navigator>
               )
             }
@@ -525,13 +277,14 @@ export default function TabNavigation({ route, navigation }) {
               return (
                 <HomeStack.Navigator screenOptions={{ headerShown: false}}>
                   <HomeStack.Screen
-                    name="Home"
-                    component={HomeScreen}
+                    name="Courses"
+                    component={Courses}
                     initialParams={{ isChild: isChild }}
                   />
+
                   <HomeStack.Screen
-                    name="MyClass"
-                    component={ClassScreenKid}
+                    name="RecommendCourses"
+                    component={RecommendCourses}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -545,8 +298,83 @@ export default function TabNavigation({ route, navigation }) {
                     }}
                   />
                   <HomeStack.Screen
-                  name="ScheduleScreen"
-                  component={ScheduleScreen}
+                    name="TrackingProgress"
+                    component={TrackingProgress}
+                    options={{
+                      headerStyle: {
+                        backgroundColor: '#FFEDDA',
+                        // use your preferred color code
+                      },
+                      headerTitleStyle: {
+                        color: '#3DB2FF',
+                        // use your preferred color code
+                      },
+                      title: 'Lớp học của bé'
+                    }}
+                  />
+                  <HomeStack.Screen
+                  name="CourseStudying"
+                  component={CourseStudying}
+                  options={{
+                    headerStyle: {
+                      backgroundColor: '#FFEDDA',
+                      // use your preferred color code
+                    },
+                    headerTitleStyle: {
+                      color: '#3DB2FF',
+                      // use your preferred color code
+                    },
+                    title: 'Thời khóa biểu',
+                  }}
+                />
+                <HomeStack.Screen
+                  name="TrackingResult"
+                  component={TrackingResult}
+                  options={{
+                    headerStyle: {
+                      backgroundColor: '#FFEDDA',
+                      // use your preferred color code
+                    },
+                    headerTitleStyle: {
+                      color: '#3DB2FF',
+                      // use your preferred color code
+                    },
+                    title: 'Thời khóa biểu',
+                  }}
+                />
+                <HomeStack.Screen
+                  name="TrackingDetailResult"
+                  component={TrackingDetailResult}
+                  options={{
+                    headerStyle: {
+                      backgroundColor: '#FFEDDA',
+                      // use your preferred color code
+                    },
+                    headerTitleStyle: {
+                      color: '#3DB2FF',
+                      // use your preferred color code
+                    },
+                    title: 'Thời khóa biểu',
+                  }}
+                />
+                <HomeStack.Screen
+                  name="TrackingExam"
+                  component={TrackingExam}
+                  options={{
+                    headerStyle: {
+                      backgroundColor: '#FFEDDA',
+                      // use your preferred color code
+                    },
+                    headerTitleStyle: {
+                      color: '#3DB2FF',
+                      // use your preferred color code
+                    },
+                    title: 'Thời khóa biểu',
+                  }}
+                />
+                <HomeStack.Screen
+                  name="TrackingDetailExam"
+                  component={TrackingDetailExam}
                   options={{
                     headerStyle: {
                       backgroundColor: '#FFEDDA',
@@ -561,7 +389,7 @@ export default function TabNavigation({ route, navigation }) {
                 />
                 <HomeStack.Screen
                   name="VideoCall"
-                  component={VideoCall}
+                  component={VideoCalls}
                   
                   options={{
                     headerStyle: {
@@ -581,99 +409,9 @@ export default function TabNavigation({ route, navigation }) {
                     tabBarShowLabel: false
                   }}
                 />
-                <HomeStack.Screen
-                  name="ViewResultStudyed"
-                  component={ViewResultStudyed}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
-                  }}
-                />
-                <HomeStack.Screen
-                  name="StudyingCourse"
-                  component={StudyingCourse}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
-                  }}
-                />
-                <HomeStack.Screen
-                  name="StudyedScreen"
-                  component={StudyedScreen}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
-                  }}
-                />
-                <HomeStack.Screen
-                  name="GBAForKids"
-                  component={GBAForKids}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Kết quả học tập',
-                  }}
-                />
-                  <HomeStack.Screen
-                    name="CourseBuy"
-                    component={CourseHasBuyScreen}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Khóa học'
-                    }}
-                  />
                   <HomeStack.Screen
                     name="MyLesson"
-                    component={MyLessonScreen}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Buổi học của bé'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="ClassDetailScreenForKid"
-                    component={ClassDetailScreenForKid}
+                    component={Lessons}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -688,7 +426,7 @@ export default function TabNavigation({ route, navigation }) {
                   />
                   <HomeStack.Screen
                     name="Exercise"
-                    component={ExerciseScreen}
+                    component={Exicises}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -709,9 +447,8 @@ export default function TabNavigation({ route, navigation }) {
               return (
                 <HomeStack.Navigator screenOptions={{ headerShown: false }}>
                   <HomeStack.Screen
-                    name="Home"
-                    component={HomeParentScreen}
-                    initialParams={{ isPayment: false }}
+                    name="ShoppingCourse"
+                    component={ShoppingCourse}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -721,27 +458,12 @@ export default function TabNavigation({ route, navigation }) {
                         color: '#3DB2FF',
                         // use your preferred color code
                       },
-                      title: 'Trang chủ'
+                      title: 'Lớp học của bé'
                     }}
                   />
                   <HomeStack.Screen
-                  name="ScheduleScreen"
-                  component={ScheduleScreen}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
-                  }}
-                />
-                  <HomeStack.Screen
-                    name="Home1"
-                    component={HomeParentScreen2}
+                    name="ShoppingCourseDetail"
+                    component={ShoppingCourseDetail}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -751,12 +473,12 @@ export default function TabNavigation({ route, navigation }) {
                         color: '#3DB2FF',
                         // use your preferred color code
                       },
-                      title: 'Trang chủ'
+                      title: 'Lớp học của bé'
                     }}
                   />
-                  <HomeStack.Screen
-                    name="TrackingAll"
-                    component={TrackingAll}
+                                    <HomeStack.Screen
+                    name="ShoppingCart"
+                    component={ShoppingCart}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -766,127 +488,7 @@ export default function TabNavigation({ route, navigation }) {
                         color: '#3DB2FF',
                         // use your preferred color code
                       },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="TrackingExam"
-                    component={TrackingExam}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="TrackingCourseKid"
-                    component={TrackingCourseKid}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                  name="StudyedScreen"
-                  component={StudyedScreen}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
-                  }}
-                />
-                  <HomeStack.Screen
-                    name="StudyingCourse"
-                    component={StudyingCourse}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="CourseBuyForParent"
-                    component={CourseBuyForParent}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Trang chủ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="ClassDetailScreen"
-                    component={ClassDetailScreenForParent}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Chi tiết khóa học'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="MyLesson"
-                    component={MyLessonScreen}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Buổi học của bé'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="Exercise"
-                    component={ExerciseScreen}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Bài tập'
+                      title: 'Lớp học của bé'
                     }}
                   />
                 </HomeStack.Navigator>
@@ -919,8 +521,8 @@ export default function TabNavigation({ route, navigation }) {
               return (
                 <HomeStack.Navigator screenOptions={{ headerShown: false }}>
                   <HomeStack.Screen
-                    name="MyContest"
-                    component={ContestParentScreen}
+                    name="ListContest"
+                    component={ListContest}
                     initialParams={{ isChild: isChild }}
                     options={{
                       headerStyle: {
@@ -935,23 +537,9 @@ export default function TabNavigation({ route, navigation }) {
                     }}
                   />
                   <HomeStack.Screen
-                    name="GBAContestForKids"
-                    component={GBAContestForKids}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Tiến độ'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="Contest"
-                    component={ContestParentScreen}
+                    name="JoinContest"
+                    component={JoinContest}
+                    initialParams={{ isChild: isChild }}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -965,8 +553,9 @@ export default function TabNavigation({ route, navigation }) {
                     }}
                   />
                   <HomeStack.Screen
-                    name="ResultContest"
-                    component={ResultContest}
+                    name="ContestJoined"
+                    component={ContestJoined}
+                    initialParams={{ isChild: isChild }}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -977,51 +566,6 @@ export default function TabNavigation({ route, navigation }) {
                         // use your preferred color code
                       },
                       title: 'Cuộc thi'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="ContestHasSign"
-                    component={ContestHasSign}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Cuộc thi'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="DetailContest"
-                    component={DetailContestScreen}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Chi tiết cuộc thi'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="TrackingContestKid"
-                    component={TrackingContestKid}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Theo dõi kết quả học tập của trẻ'
                     }}
                   />
                 </HomeStack.Navigator>
@@ -1032,7 +576,7 @@ export default function TabNavigation({ route, navigation }) {
                 <HomeStack.Navigator screenOptions={{ headerShown: false }}>
                   <HomeStack.Screen
                     name="MyContest"
-                    component={ContestScreenForChild}
+                    component={Contests}
                     initialParams={{ isChild: isChild }}
                     options={{
                       headerStyle: {
@@ -1047,8 +591,8 @@ export default function TabNavigation({ route, navigation }) {
                     }}
                   />
                   <HomeStack.Screen
-                    name="GBAContestForKids"
-                    component={GBAContestForKids}
+                    name="ContestDetail"
+                    component={ContestDetail}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -1063,7 +607,7 @@ export default function TabNavigation({ route, navigation }) {
                   />
                   <HomeStack.Screen
                     name="ContestHasSignForKid"
-                    component={ContestHasSignForKid}
+                    component={ContestJoining}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -1077,23 +621,8 @@ export default function TabNavigation({ route, navigation }) {
                     }}
                   />
                   <HomeStack.Screen
-                    name="ScoreContestAll"
-                    component={ScoreContestAll}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Kết quả'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="ListContestHasScore"
-                    component={ListContestHasScore}
+                    name="ContestJoined"
+                    component={TrackingContestStudied}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -1108,7 +637,7 @@ export default function TabNavigation({ route, navigation }) {
                   />
                   <HomeStack.Screen
                     name="KidsJoinContest"
-                    component={KidsJoinContest}
+                    component={Submits}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -1122,8 +651,8 @@ export default function TabNavigation({ route, navigation }) {
                     }}
                   />
                   <HomeStack.Screen
-                    name="Contest"
-                    component={ContestScreenForChild}
+                    name="TrackingResultDetailContest"
+                    component={TrackingResultDetailContest}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -1137,8 +666,8 @@ export default function TabNavigation({ route, navigation }) {
                     }}
                   />
                   <HomeStack.Screen
-                    name="ContestDetailForKid"
-                    component={ContestDetailForKid}
+                    name="TrackingResultContest"
+                    component={TrackingResultContest}
                     options={{
                       headerStyle: {
                         backgroundColor: '#FFEDDA',
@@ -1149,21 +678,6 @@ export default function TabNavigation({ route, navigation }) {
                         // use your preferred color code
                       },
                       title: 'Chi tiết cuộc thi'
-                    }}
-                  />
-                  <HomeStack.Screen
-                    name="TrackingContestKid"
-                    component={TrackingContestKid}
-                    options={{
-                      headerStyle: {
-                        backgroundColor: '#FFEDDA',
-                        // use your preferred color code
-                      },
-                      headerTitleStyle: {
-                        color: '#3DB2FF',
-                        // use your preferred color code
-                      },
-                      title: 'Theo dõi kết quả học tập của trẻ'
                     }}
                   />
                 </HomeStack.Navigator>
@@ -1406,21 +920,6 @@ export default function TabNavigation({ route, navigation }) {
                       // use your preferred color code
                     },
                     title: 'Tiện ích'
-                  }}
-                />
-                <HomeStack.Screen
-                  name="ScheduleScreen"
-                  component={ScheduleScreen}
-                  options={{
-                    headerStyle: {
-                      backgroundColor: '#FFEDDA',
-                      // use your preferred color code
-                    },
-                    headerTitleStyle: {
-                      color: '#3DB2FF',
-                      // use your preferred color code
-                    },
-                    title: 'Thời khóa biểu',
                   }}
                 />
                 <HomeStack.Screen
